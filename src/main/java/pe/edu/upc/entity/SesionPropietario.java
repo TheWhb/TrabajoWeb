@@ -21,8 +21,8 @@ public class SesionPropietario implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idSesionPropietario;
 	
-	@Column(name="ContraseñaSP", nullable=false, length=15)
-	private String ContraseñaSP;
+	@Column(name="ContraseniaSP", nullable=false, length=15)
+	private String ContraseniaSP;
 	
 	@Column(name="EmailSP", nullable=false, length=40)
 	private String EmailSP;
@@ -35,10 +35,10 @@ public class SesionPropietario implements Serializable {
 		super();
 	}	
 
-	public SesionPropietario(int idSesionPropietario, String contraseñaSP, String emailSP, Propietario propietarioSP) {
+	public SesionPropietario(int idSesionPropietario, String contraseniaSP, String emailSP, Propietario propietarioSP) {
 		super();
 		this.idSesionPropietario = idSesionPropietario;
-		ContraseñaSP = contraseñaSP;
+		ContraseniaSP = contraseniaSP;
 		EmailSP = emailSP;
 		this.propietarioSP = propietarioSP;
 	}
@@ -51,12 +51,12 @@ public class SesionPropietario implements Serializable {
 		this.idSesionPropietario = idSesionPropietario;
 	}
 
-	public String getContraseñaSP() {
-		return ContraseñaSP;
+	public String getContraseniaSP() {
+		return ContraseniaSP;
 	}
 
-	public void setContraseñaSP(String contraseñaSP) {
-		ContraseñaSP = contraseñaSP;
+	public void setContraseniaSP(String contraseniaSP) {
+		ContraseniaSP = contraseniaSP;
 	}
 
 	public String getEmailSP() {
