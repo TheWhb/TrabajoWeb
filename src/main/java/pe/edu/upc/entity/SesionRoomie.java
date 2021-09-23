@@ -21,8 +21,8 @@ public class SesionRoomie implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idSesionRoomie;
 	
-	@Column(name="ContraseñaSR", nullable=false, length=15)
-	private String ContraseñaSR;
+	@Column(name="ContraseniaSR", nullable=false, length=15)
+	private String ContraseniaSR;
 	
 	@Column(name="EmailSR", nullable=false, length=40)
 	private String EmailSR;
@@ -35,10 +35,10 @@ public class SesionRoomie implements Serializable {
 		super();
 	}
 
-	public SesionRoomie(int idSesionRoomie, String contraseñaSR, String emailSR, Roomie roomieSR) {
+	public SesionRoomie(int idSesionRoomie, String contraseniaSR, String emailSR, Roomie roomieSR) {
 		super();
 		this.idSesionRoomie = idSesionRoomie;
-		ContraseñaSR = contraseñaSR;
+		ContraseniaSR = contraseniaSR;
 		EmailSR = emailSR;
 		this.roomieSR = roomieSR;
 	}
@@ -51,12 +51,12 @@ public class SesionRoomie implements Serializable {
 		this.idSesionRoomie = idSesionRoomie;
 	}
 
-	public String getContraseñaSR() {
-		return ContraseñaSR;
+	public String getContraseniaSR() {
+		return ContraseniaSR;
 	}
 
-	public void setContraseñaSR(String contraseñaSR) {
-		ContraseñaSR = contraseñaSR;
+	public void setContraseniaSR(String contraseniaSR) {
+		ContraseniaSR = contraseniaSR;
 	}
 
 	public String getEmailSR() {
