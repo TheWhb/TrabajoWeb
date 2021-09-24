@@ -9,10 +9,10 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import pe.edu.upc.entity.Propietario;
 import pe.edu.upc.entity.Vivienda;
-import pe.edu.upc.service.IPropietarioService;
+import pe.edu.upc.entity.Propietario;
 import pe.edu.upc.service.IViviendaService;
+import pe.edu.upc.service.IPropietarioService;
 
 @Named
 @RequestScoped
@@ -21,21 +21,21 @@ public class ViviendaController implements Serializable {
 	private static final long serialVersionUID = -6186585572086714609L;
 	
 	@Inject
-	private IPropietarioService pService;
 	private IViviendaService vService;
-	private Propietario propietario;
+	private IPropietarioService pService;
 	private Vivienda vivienda;
-	List<Propietario> listaPropietario;
+	private Propietario propietario;
 	List<Vivienda> listaVivienda;
+	List<Propietario> listaPropietario;
 	
 	@PostConstruct
 	public void init() {
-		this.listaPropietario = new ArrayList<Propietario>();
 		this.listaVivienda = new ArrayList<Vivienda>();
-		this.propietario = new Propietario();
+		this.listaPropietario = new ArrayList<Propietario>();
 		this.vivienda = new Vivienda();
-		this.listarPropietario();
+		this.propietario = new Propietario();
 		this.listarVivienda();
+		this.listarPropietario();
 	}
 	
 	public String nuevoVivienda() {
@@ -47,30 +47,34 @@ public class ViviendaController implements Serializable {
 		return "vivienda.xhtml";
 	}
 
-	public void insertarRoomie() {
+	public void insertarVivienda() {
 		vService.insertar(vivienda);
 		this.limpiarVivienda();
 		this.listarVivienda();
 	}
 	
-	public void listarPropietario() {
+	public void listarVivienda() {
 		listaVivienda = vService.listar();
 	}
 	
-	public void listarVivienda() {
+	public void listarPropietario() {
 		listaPropietario = pService.listar();
-	}
-	
-	public void mostrarPropietario(int idPropietario) {
-		propietario = pService.mostrar(idPropietario);
 	}
 	
 	public void mostrarVivienda(int idVivienda) {
 		vivienda = vService.mostrar(idVivienda);
 	}
 	
+	public void mostrarPropietario(int idPropietario) {
+		propietario = pService.mostrar(idPropietario);
+	}
+	
 	public void actualizarVivienda() {
 		vService.actualizar(vivienda);
+	}
+	
+	public void eliminarVivienda(Vivienda vivienda) {
+		vService.eliminar(vivienda.getIdVivienda());
 	}
 	
 	public void limpiarVivienda() {
