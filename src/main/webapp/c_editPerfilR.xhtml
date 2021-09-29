@@ -1,0 +1,129 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition template="templates/common.xhtml">
+		<ui:define name="header">
+			<div class="h-header">
+				<h1 class="logo_findr">FindRoomie</h1>
+				<div class="navigation">
+					<ul class="enlaces">
+						<li><a href="porverse.xhtml" class="header-link">Inicio</a></li>
+						<li><a href="#" class="header-link">Sobre Nosotros</a></li>
+						<li><a href="#" class="header-link">Lugares</a></li>
+						<li><a href="#" class="header-link">Contacto</a></li>
+						<li><a href="c_editPerfilR.xhtml" class="header-link">Configuración</a></li>
+						
+					</ul>
+				</div>
+			</div>
+		</ui:define>
+
+		<ui:define name="content">
+
+			<div class="c-main-config">
+								<h:graphicImage value="/resources/img/bg-config.png" height="100%"
+									width="100%"></h:graphicImage>
+				<div class="c-flex-config">
+					<div class="p-config-izq">
+						<ul class="config-list">
+							<li><a href="#" class="config-link">Editar perfil</a></li>
+							<li><a href="c_editSusR.xhtml" class="config-link">Administrar suscripción</a></li>
+							<li><a href="#" class="config-link">Ayuda</a></li>
+							<br />
+							<br />
+							<li><a href="#" class="config-link">Cerrar sesión</a></li>
+						</ul>
+						<h:graphicImage value="/resources/img/g-config.svg" height="60%"
+							width="60%">
+						</h:graphicImage>
+
+					</div>
+					<div class="p-config-der">
+						<div class="c-editarperfil">
+							<div class="c-1">
+								<h2 class="t-h2-editarPerfil">Editar perfil</h2>
+								<h:form id="editarperfil-form" prependId="false">
+									<h:outputLabel for="Correo electronico" id="l-EP-email"
+										value="Email " styleClass="control-label" />
+									<br />
+
+									<h:inputText autocomplete="off" id="i-EP-email"
+										styleClass="form-control" value="" maxlength="45"
+										required="true" />
+									<br />
+									<br />
+									<h:outputLabel for="Contraseña" id="l-EP-password"
+										value="Password " styleClass="control-label" />
+									<br />
+
+									<h:inputSecret autocomplete="off" id="i-EP-password" value=""
+										maxlength="45" required="true" styleClass="form-control" />
+								</h:form>
+
+							</div>
+							<div class="c-2"></div>
+							<h:form id="editarperfil2-form" prependId="false">
+
+								<h:outputLabel for="Nombres Completos"
+									id="l-EP-NombresCompletos" value="Nombres Completos "
+									styleClass="control-label" />
+								<br />
+								<h:inputText autocomplete="off" id="i-EP-nombrescompletos"
+									styleClass="form-control" value="" maxlength="45"
+									required="true" />
+								<br />
+								<br />
+								<h:outputLabel for="Apellidos Completos"
+									id="l-EP-ApellidosCompletos" value="Apellidos Completos "
+									styleClass="control-label" />
+								<br />
+								<h:inputSecret autocomplete="off" id="i-EP-apellidoscompletos"
+									value="" maxlength="45" required="true"
+									styleClass="form-control" />
+								<br />
+								<br />
+								<h:outputLabel for="Numero Telefonico" id="l-EP-numerotelef"
+									value="Número Telefónico " styleClass="control-label" />
+								<br />
+								<h:inputSecret autocomplete="off" id="i-EP-numerotelef" value=""
+									maxlength="45" required="true" styleClass="form-control" />
+								<br />
+								<br />
+								<h:outputLabel for="Dirección" id="l-EP-direccion"
+									value="Dirección " styleClass="control-label" />
+								<br />
+								<h:inputSecret autocomplete="off" id="i-EP-direccion" value=""
+									maxlength="45" required="true" styleClass="form-control" />
+							</h:form>
+
+						</div>
+						<div class="c-editarpefil-btns">
+							<h:commandButton id="btn-EP-cancelar" value="Cancelar" /><br />
+							<h:commandButton id="btn-EP-actualizarcambios"
+								value="Actualizar cambios" onclick="alert('Cambios guardados')"/>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</ui:define>
+
+
+	</ui:composition>
+
+
+
+</h:body>
+</html>

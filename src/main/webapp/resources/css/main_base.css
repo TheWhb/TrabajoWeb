@@ -1,0 +1,396 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Be Vietnam Pro";
+	color: black;
+}
+
+.header-link {
+	font-weight: 500;
+	font-size: 14px;
+	color: #949EA7;
+	text-decoration: none;
+	position: relative;
+}
+
+.header-link::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	background: currentColor;
+	transform-origin: right;
+	transform: scaleX(0);
+	transition: transform 250ms ease-in;
+}
+
+.header-link:hover::after {
+	transform: scaleX(1);
+	transform-origin: left;
+}
+
+.btn-unete {
+	font-weight: 500;
+	font-size: 16px;
+	padding: 10px 25px 10px 25px;
+	border-radius: 20px;
+	background: #33658A;
+	color: white;
+	text-decoration: none;
+	box-shadow: 0px 3px 17px #2868B187;
+}
+
+.btn-unete:hover {
+	background: #86bbd8;
+}
+
+.l-propietarios {
+	font-weight: 500;
+	font-size: 14px;
+	color: white;
+	padding: 10px;
+	background-color: #394B73;
+}
+
+.l-propietarios:hover {
+	background: #86bbd8;
+}
+
+.btn-sus1 {
+	font-weight: 500;
+	font-size: 16px;
+	padding: 10px 25px 10px 25px;
+	border-radius: 20px;
+	background: #F6AE2D;
+	color: white;
+	text-decoration: none;
+}
+
+.c-sus {
+	position: relative;
+}
+
+.aux-sus {
+	position: absolute;
+	margin: -310px 60px;
+}
+
+.btn-m-sus {
+	font-weight: 800;
+	font-size: 25px;
+	padding: 10px 25px 10px 25px;
+	border-radius: 25px;
+	background: #F6AE2D;
+	color: white;
+	text-decoration: none;
+	z-index: 999;
+}
+
+.logo_findr {
+	color: #394B73;
+	font-size: 20px;
+	font-style: italic;
+	font-family: 'Be Vietnam Pro';
+	font-weight: 700;
+	float: left;
+	padding: 10px 0;
+}
+
+.h-header {
+	width: 80%;
+	margin: 0 auto;
+	align-items: center;
+	
+}
+
+.navigation {
+	float: right;
+}
+
+.navigation ul {
+	list-style: none;
+}
+
+.navigation li {
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.c-login-main {
+	margin-top: 40px;
+	display: flex;
+	width: 100%;
+	height: 500px;
+	flex-basis: 100%;
+	padding: 0px;
+}
+
+.d-izquierda {
+	background-color: #949EA7;
+	height: 100%;
+	flex: 1.3;
+}
+
+.d-derecha {
+	background-color: #f7fcff;
+	height: 100%;
+	flex: 1;
+	text-align: center;
+}
+
+.d-login {
+	padding: 50px 60px;
+}
+
+.t-login {
+	font-weight: 700;
+	color: black;
+	font-size: 35px;
+	margin: 0;
+}
+
+.t-eresnuevo {
+	color: #949EA7;
+	margin: 0;
+}
+
+img {
+	max-width: 100%;
+}
+
+#btnEntrar {
+	font-family: 'Be Vietnam Pro';
+	font-weight: 700;
+	color: white;
+	font-size: 20px;
+	background: #33658A;
+	padding: 9px 70px;
+	border-radius: 38px;
+	border: none;
+}
+
+#btnEntrar:hover {
+	background: #86bbd8;
+}
+
+#correoElectronico {
+	height: 36px;
+	background: #F0F4FF 0% 0% no-repeat padding-box;
+	background: #F0F4FF 0% 0% no-repeat padding-box;
+	border: 1px solid #394B736E;
+	border-radius: 6px;
+	width: 200px;
+	border: 1px solid grey;
+}
+
+#contrasenia {
+	height: 36px;
+	background: #F0F4FF 0% 0% no-repeat padding-box;
+	border-radius: 6px;;
+	width: 200px;
+	border: 1px solid grey;
+}
+
+#correoElectronicoP {
+	height: 36px;
+	background: #F0F4FF 0% 0% no-repeat padding-box;
+	background: #F0F4FF 0% 0% no-repeat padding-box;
+	border: 1px solid #394B736E;
+	border-radius: 6px;
+	width: 200px;
+	border: 1px solid grey;
+}
+
+#contraseniaP {
+	height: 36px;
+	background: #F0F4FF 0% 0% no-repeat padding-box;
+	border-radius: 6px;;
+	width: 200px;
+	border: 1px solid grey;
+}
+
+#imgpfp {
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+.c-main-config {
+	width: 100%;
+	height: 530px;
+	position: relative;
+
+}
+
+.c-flex-config {
+	margin-top:-34em;
+	height: 100%;
+	width: 100%;
+	align-items: center;
+	display: flex;
+	justify-content: space-around;
+	position: absolute;
+}
+
+.p-config-izq {
+	background: rgba(255,255,255,0.95);
+	width: 255px;
+	height: 448px;
+	padding: 1em;
+	border-radius: 15px;
+	box-shadow: 0px 8px 40px rgba(51, 101, 138, 0.18);
+	
+}
+
+.config-link {
+	font-weight: 600;
+	font-size: 14px;
+	color: black;
+	line-height: 40px;
+	text-decoration: none;
+	position: relative;
+}
+
+.config-link::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	background: currentColor;
+	transform-origin: right;
+	transform: scaleX(0);
+	transition: transform 250ms ease-in;
+}
+
+.config-link:hover::after {
+	transform: scaleX(1);
+	transform-origin: left;
+}
+
+.config-list {
+	list-style: none;
+}
+
+.p-config-der {
+	background: rgba(255,255,255,0.95);
+	width: 625px;
+	height: 448px;
+	border-radius: 15px;
+	box-shadow: 0px 8px 40px rgba(51, 101, 138, 0.18);
+}
+
+.t-h2-editarPerfil{
+	font-weight: 800;
+	font-size: 30px;
+}
+
+#l-EP-email, #l-EP-password, #l-EP-NombresCompletos, #l-EP-ApellidosCompletos,
+#l-EP-numerotelef, #l-EP-direccion{
+	font-size: 12px;
+	color: #2F4858;
+}
+
+#i-EP-email, #i-EP-password, #i-EP-numerotelef, #i-EP-direccion{
+	height: 36px;
+	background: #FCFFF0 0% 0% no-repeat padding-box;
+	
+	border-radius: 6px;
+	width: 200px;
+	border: 1px solid grey;
+}
+#i-EP-nombrescompletos, #i-EP-apellidoscompletos{
+	height: 36px;
+	background: #F0F0F0 0% 0% no-repeat padding-box;
+	border-radius: 6px;;
+	width: 200px;
+	border: 1px solid grey;
+}
+
+
+
+.c-editarperfil {
+	display: flex;
+	padding: 1.5em;
+	justify-content: space-around;
+	align-content: center;
+	margin-top:30px;
+	
+}
+
+
+.c-editarpefil-btns {
+	padding: 0.5em 1.5em;
+	display: flex;
+	justify-content: flex-end;
+}
+
+#btn-EP-cancelar {
+	font-size: 16px;
+	border: none;
+	font-family: 'Be Vietnam Pro';
+	color: gray;
+	font-weight: 700;
+	background: white;
+	border-radius: 30px;
+	padding: 0.6em 1.7em;
+	border: 2px solid gray;
+}
+#btn-EP-cancelar:hover{
+	background: #F0F0F0;
+}
+
+#btn-EP-actualizarcambios {
+	font-size: 16px;
+	border: none;
+	font-family: 'Be Vietnam Pro';
+	color: white;
+	font-weight: 700;
+	background: #33658A;
+	border-radius: 30px;
+	padding: 0.6em 1.7em;
+	box-shadow: 0px 8px 40px rgba(40, 104, 177, 0.53);
+	margin-left: 7px;
+}
+#btn-EP-actualizarcambios:hover{
+	background: #c5deec;
+}
+
+.p-config-der-sus{
+	background: rgba(255,255,255,0.95);
+	width: 625px;
+	height: 448px;
+	padding:3em;
+	border-radius: 15px;
+	box-shadow: 0px 8px 40px rgba(51, 101, 138, 0.18);
+}
+.p-config-izq-pref{
+	background: rgba(255,255,255,0.95);
+	height: 448px;
+	padding:1em;
+	border-radius: 15px;
+	box-shadow: 0px 8px 40px rgba(51, 101, 138, 0.18);
+}
+.c-roomieinicio{
+	display:flex;
+	justify-content: space-around;
+	align-content: center;
+	background: #f7fcff;
+	width: 100%;
+}
+.roomie-datatable{
+	width: 50%;
+}
+
+#lstVivienda{
+	font-family: 'Be Vietnam Pro';
+	
+}
+
+
+
+
