@@ -1,0 +1,110 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition template="templates/common.xhtml">
+		<ui:define name="header">
+			<div class="h-header">
+				<h1 class="logo_findr">FindRoomie</h1>
+				<div class="navigation">
+					<ul class="enlaces">
+						<li><a href="porverse.xhtml" class="header-link">Inicio</a></li>
+						<li><a href="#" class="header-link">Sobre Nosotros</a></li>
+						<li><a href="#" class="header-link">Lugares</a></li>
+						<li><a href="#" class="header-link">Contacto</a></li>
+						<li><a href="c_editPerfilR.xhtml" class="header-link">Configuración</a></li>
+						
+					</ul>
+				</div>
+			</div>
+		</ui:define>
+
+		<ui:define name="content">
+
+			<div class="c-main-config">
+				<h:graphicImage value="/resources/img/bg-config.png" height="100%"
+					width="100%"></h:graphicImage>
+				<div class="c-flex-config">
+					<div class="p-config-izq">
+						<ul class="config-list">
+							<li><a href="c_editPerfilR.xhtml" class="config-link">Editar
+									perfil</a></li>
+							<li><a href="c_editSusR.xhtml" class="config-link">Administrar
+									suscripción</a></li>
+							<li><a href="#" class="config-link">Ayuda</a></li>
+							<br />
+							<br />
+							<li><a href="#" class="config-link">Cerrar sesión</a></li>
+						</ul>
+						<h:graphicImage value="/resources/img/g-config.svg" height="60%"
+							width="60%">
+						</h:graphicImage>
+
+					</div>
+					<div class="p-config-der-pref">
+						<h3 class="t-h3-editarPreferencias">¿Qué buscas?</h3>
+
+						<h:outputLabel for="Seleccionar Distrito" id="l-EPref-distrito"
+							value="Seleccionar distrito " styleClass="control-label" />
+						<br />
+
+						<h:selectOneMenu value="#{userData.data}">
+							<f:selectItem itemValue="1" itemLabel="Distrito 1" />
+							<f:selectItem itemValue="2" itemLabel="Distrito 2" />
+							<f:selectItem itemValue="3" itemLabel="Distrito 3" />
+							<f:selectItem itemValue="4" itemLabel="Distrito 4" />
+						</h:selectOneMenu>
+						<br /> <br />
+						<h:outputLabel for="Seleccionar Rango de Edad" id="l-EPref-edad"
+							value="Seleccionar rango de edad " styleClass="control-label" />
+						<br />
+
+						<h:selectOneMenu value="#{userData.data}">
+							<f:selectItem itemValue="1" itemLabel="18-21" />
+							<f:selectItem itemValue="2" itemLabel="21-24" />
+							<f:selectItem itemValue="3" itemLabel="24-27" />
+							<f:selectItem itemValue="4" itemLabel="27-30" />
+						</h:selectOneMenu>
+
+						<br /> <br />
+						<h:outputLabel for="Mascotas " id="l-EPref-mascotas"
+							value="Mascotas " styleClass="control-label" />
+						<br />
+
+						<h:selectOneMenu value="#{userData.data}">
+							<f:selectItem itemValue="1" itemLabel="Sin Mascotas" />
+							<f:selectItem itemValue="2" itemLabel="Con Mascotas" />
+						</h:selectOneMenu>
+						<br /> <br />
+
+
+						<div class="c-editarpefil-btns">
+							<h:commandButton id="btn-EP-cancelar" value="Cancelar" />
+							<br />
+							<h:commandButton id="btn-EP-actualizarcambios"
+								value="Actualizar cambios" />
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</ui:define>
+
+
+	</ui:composition>
+
+
+
+</h:body>
+</html>

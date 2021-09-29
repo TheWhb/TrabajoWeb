@@ -1,0 +1,74 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:body>
+	<h:outputStylesheet library="css" name="main_base.css" />
+
+	<ui:composition template="templates/common.xhtml">
+		<ui:define name="header">
+			<div class="h-header">
+				<h1 class="logo_findr">FindRoomie</h1>
+				<div class="navigation">
+					<ul class="enlaces">
+						<li><a href="home.xhtml" class="header-link">Inicio</a></li>
+						<li><a href="#" class="header-link">Sobre Nosotros</a></li>
+						<li><a href="#" class="header-link">Lugares</a></li>
+						<li><a href="#" class="header-link">Contacto</a></li>
+					</ul>
+				</div>
+			</div>
+		</ui:define>
+
+		<ui:define name="content">
+			<div class="c-login-main">
+				<h:graphicImage value="/resources/img/rmts4.png" height="100%"
+					width="50%">
+				</h:graphicImage>
+				<div class="d-derecha">
+					<div class="d-login">
+						<a href="LoginP.xhtml" class="l-propietarios">ir a Login para
+							propietarios</a> <br /> <br />
+						<h1 class="t-login">Entra a la comunidad.</h1>
+						<br />
+						<p class="t-eresnuevo">¿Eres nuevo? Registrate aquí.</p>
+						<br />
+						<h:form id="login-form" prependId="false">
+							<p:messages autoUpdate="true" />
+							<h:outputLabel for="Correo electronico" value="Email "
+								styleClass="control-label" />
+								<br />
+							<h:inputText autocomplete="off" id="correoElectronico"
+								styleClass="form-control" value="" maxlength="45"
+								required="true" />
+							<br />
+							<br />
+							<h:outputLabel for="Contraseña" value="Password "
+								styleClass="control-label" />							
+								<br />
+								
+							<h:inputSecret autocomplete="off" id="contrasenia"
+								styleClass="form-control" value="" maxlength="45"
+								required="true" />
+							<br />
+							<br />
+							<h:commandButton id="btnEntrar"   value="Entrar" />
+
+
+						</h:form>
+					</div>
+				</div>
+			</div>
+		</ui:define>
+
+	</ui:composition>
+
+</h:body>
+</html>
