@@ -38,16 +38,25 @@
 							propietarios</a> <br /> <br />
 						<h1 class="t-login">Entra a la comunidad.</h1>
 						<br />
-						<p class="t-eresnuevo">¿Eres nuevo?<a href="Registro.xhtml" class="registrate-aqui"> Registrate aquí.</a></p>
+						<p class="t-eresnuevo">¿Eres nuevo?
+						<h:link id="btnRegistrarse" 
+							value="Registrate aquí." 
+							actionListener="#{roomieController.nuevoRoomie()}"
+							outcome="Registro.xhtml"/>
+						</p>
 						<br />
-						<h:form id="login-form" prependId="false">
+						<h:form id="login-form" 
+							prependId="false">
+						<!-- var="roo" value="#{roomieController.roomie}"-->
 							<p:messages autoUpdate="true" />
 							<h:outputLabel for="Correo electronico" value="Email "
 								styleClass="control-label" />
 								<br />
 							<h:inputText autocomplete="off" id="correoElectronico"
-								styleClass="form-control" maxlength="45"
+								styleClass="form-control" 
+								maxlength="45"
 								required="true" />
+								<!--value="#{roomieController.roomie.emailR}"-->
 							<br />
 							<br />
 							<h:outputLabel for="Contraseña" value="Password "
@@ -55,8 +64,10 @@
 								<br />
 								
 							<h:inputSecret autocomplete="off" id="contrasenia"
-								styleClass="form-control" maxlength="45"
+								styleClass="form-control" 
+								maxlength="15"
 								required="true" />
+								<!--value="#{roomieController.roomie.contraseniaR}"-->
 							<br />
 							<br />
 							<p:outputLabel for="Roomie" value="Roomie " />
@@ -65,9 +76,8 @@
 								<f:selectItems value="#{roomieController.listaRoomie}" var="d"
 									itemLabel="#{d.DNIR}" itemValue="#{d}" />
 							</p:selectOneMenu>
-							<h:commandButton id="btnEntrar" value="Entrar" 
+							<h:commandButton id="btnEntrar" value="Entrar"
 								action="RoomieInicio?faces-redirect=true"/>
-
 						</h:form>
 					</div>
 				</div>

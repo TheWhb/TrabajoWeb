@@ -24,7 +24,9 @@ public class PlanSuscripcionRController implements Serializable {
 	
 	@Inject
 	private IPlanSuscripcionRService psrService;
+	@Inject
 	private IRoomieService rService;
+	@Inject
 	private ISuscripcionService sService;
 	private PlanSuscripcionR planSuscripcionR;
 	private Roomie roomie;

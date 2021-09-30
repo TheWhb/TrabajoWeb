@@ -9,6 +9,7 @@ import javax.inject.Named;
 
 import pe.edu.upc.dao.IRoomieDao;
 import pe.edu.upc.entity.Roomie;
+import pe.edu.upc.entity.Vivienda;
 import pe.edu.upc.service.IRoomieService;
 
 @Named
@@ -38,6 +39,16 @@ public class RoomieServiceImpl implements IRoomieService, Serializable {
 	@Override
 	public void actualizar(Roomie roomie) {
 		objDao.actualizar(roomie);
+	}
+	
+	@Override
+	public List<Roomie> findByNameRoomie(Roomie r) {
+		return objDao.findByNameRoomie(r);
+	}
+	
+	@Override
+	public void actualizarVivienda(Roomie roomie, Vivienda idRoomie) {
+		objDao.actualizarVivienda(roomie, idRoomie);;
 	}
 	
 }

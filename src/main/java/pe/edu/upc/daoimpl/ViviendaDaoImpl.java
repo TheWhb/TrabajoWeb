@@ -58,4 +58,5 @@ public class ViviendaDaoImpl implements IViviendaDao, Serializable{
 		vivienda = em.getReference(Vivienda.class, idVivienda);
 		em.remove(vivienda);
 	}	
+
 }

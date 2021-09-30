@@ -37,8 +37,11 @@
 						<h1 class="t-login">¿Cómo quien quieres ingresar?.</h1>
 						<br />
 						<p class="t-eresnuevo">
-							¿Eres nuevo?<a href="RegistroP.xhtml" class="registrate-aqui">
-								Registrate aquí.</a>
+							¿Eres nuevo?
+							<h:link id="btnRegistrarse" 
+							value="Registrate aquí." 
+							actionListener="#{propietarioController.nuevoPropietario()}"
+							outcome="RegistroP.xhtml"/>
 						</p>
 						<br />
 						<h:form id="login-form" prependId="false">
@@ -66,7 +69,8 @@
 								<f:selectItems value="#{propietarioController.listaPropietario}" var="d"
 									itemLabel="#{d.DNIP}" itemValue="#{d}" />
 							</p:selectOneMenu>
-							<h:commandButton id="btnEntrar" value="Entrar" />
+							<h:commandButton id="btnEntrar" value="Entrar"
+								action="RegistroVivienda?faces-redirect=true"/>
 
 						</h:form>
 					</div>

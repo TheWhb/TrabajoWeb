@@ -24,7 +24,9 @@ public class BloqueoRoomieController implements Serializable {
 	
 	@Inject
 	private IBloqueoRoomieService brService;
+	@Inject
 	private IRoomieService rService;
+	@Inject
 	private IPropietarioService pService;
 	private BloqueoRoomie bloqueoRoomie;
 	private Roomie roomie;

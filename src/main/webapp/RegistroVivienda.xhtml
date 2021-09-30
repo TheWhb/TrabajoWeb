@@ -19,6 +19,7 @@
 						<li><a href="#" class="header-link">Sobre Nosotros</a></li>
 						<li><a href="#" class="header-link">Lugares</a></li>
 						<li><a href="#" class="header-link">Contacto</a></li>
+						<li><a href="c_editPerfilP.xhtml" class="header-link">Configuración</a></li>
 
 					</ul>
 				</div>
@@ -28,76 +29,84 @@
 		<ui:define name="content">
 
 			<div class="v-main-config">
-								<h:graphicImage value="/resources/img/bg-config.png" height="100%"
-									width="100%"></h:graphicImage>
+				<h:graphicImage value="/resources/img/bg-config.png" height="100%"
+					width="100%"></h:graphicImage>
 				<div class="registroV">
 
-					
-						<h2>Registro de vivienda</h2>
-						<h:form id="registro-vivienda" prependId="false">
 
-							<div>
+					<h2>Registro de vivienda</h2>
+					<h:form id="registro-vivienda" prependId="false">
+
+						<div>
 							<h:outputLabel for="Nombres de Vivienda" id="l-RV-nombrevivienda"
 								value="Nombre de Vivienda " styleClass="control-label" />
 							<br />
 							<h:inputText autocomplete="off" id="i-RV-nombrevivienda"
-								styleClass="form-control" value="" maxlength="45"
+								styleClass="form-control"
+								value="#{viviendaController.vivienda.nombreV}" maxlength="20"
 								required="true" />
-							<br />
-							<br />
+							<br /> <br />
 
-							<h:outputLabel for="Direccion"
-								id="l-RE-direccion" value="Direccion "
-								styleClass="control-label" />
+							<h:outputLabel for="Direccion" id="l-RE-direccion"
+								value="Direccion " styleClass="control-label" />
 							<br />
 							<h:inputText autocomplete="off" id="i-RV-direccion"
-								value="" maxlength="45" required="true"
-								styleClass="form-control" />
-							<br />
-							<br />
+								value="#{viviendaController.vivienda.direccionV}"
+								maxlength="200" required="true" styleClass="form-control" />
+							<br /> <br />
 
 							<h:outputLabel for="NroCuartos" id="l-RV-nrocuartos"
 								value="Nro de cuartos " styleClass="control-label" />
 							<br />
-							<h:inputText autocomplete="off" id="i-RV-nrocuartos" value=""
-								maxlength="45" required="true" styleClass="form-control" />
-							</div>
-							<div>
+							<h:inputText autocomplete="off" id="i-RV-nrocuartos"
+								value="#{viviendaController.vivienda.NCuartos}" maxlength="2"
+								required="true" styleClass="form-control" />
+						</div>
+						<div>
 							<h:outputLabel for="NroBaños" id="l-RV-nrobanios"
 								value="Nro de Baños " styleClass="control-label" />
 							<br />
-							<h:inputText autocomplete="off" id="i-RV-nrobanios" value=""
-								maxlength="45" required="true" styleClass="form-control" />
-							
-							<br />
-							<br />
+							<h:inputText autocomplete="off" id="i-RV-nrobanios"
+								value="#{viviendaController.vivienda.NBanios}" maxlength="2"
+								required="true" styleClass="form-control" />
+
+							<br /> <br />
 
 							<h:outputLabel for="NroPisos" id="l-RV-nropisos"
 								value="Nro de Pisos " styleClass="control-label" />
 							<br />
 							<h:inputText autocomplete="off" id="i-RV-nropisos"
-								styleClass="form-control" value="" maxlength="45"
+								styleClass="form-control"
+								value="#{viviendaController.vivienda.NPisos}" maxlength="2"
 								required="true" />
-							<br />
-							<br />
-								
+							<br /> <br />
+
 							<h:outputLabel for="NroPersonas" id="l-RV-nropersonas"
 								value="Nro de Personas " styleClass="control-label" />
 							<br />
 							<h:inputText autocomplete="off" id="i-RV-nropersonas"
-								styleClass="form-control" value="" maxlength="45"
-								required="true" />	
-		
-							<br />
-							<br />
-					
+								styleClass="form-control"
+								value="#{viviendaController.vivienda.NPersonas}" maxlength="1"
+								required="true" />
 
-							<h:commandButton id="btn-RE-registroR"
-							value="Registrar" onclick="alert('Cliente registrado')"/>
-							</div>
-	</h:form>
-					</div>
+							<br /> <br />
+
+							<p:outputLabel for="Propietario" value="Propietario" />
+							<p:selectOneMenu id="Propietario"
+								value="#{viviendaController.vivienda.propietarioV}"
+								converter="omnifaces.SelectItemsConverter">
+								<f:selectItems value="#{viviendaController.listaPropietario}" var="d"
+									itemLabel="#{d.nombreP}" itemValue="#{d}" />
+							</p:selectOneMenu>
+							<br /> <br />
+							<h:commandButton id="btn-RE-registroR" value="Registrar"
+								actionListener="#{viviendaController.insertarVivienda()}"
+								onclick="alert('Vivienda registrada')" 
+								/>
+						</div>
+					</h:form>
 				</div>
+			</div>
 		</ui:define>
 	</ui:composition>
 </h:body>
