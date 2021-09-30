@@ -21,8 +21,8 @@
 						<li><a href="#" class="header-link">Contacto</a></li>
 						<li><a href="c_editPerfilR.xhtml" class="header-link">Configuración</a></li>
 						<li><a href="pSuscripcionR.xhtml" class="btn-sus1">Premium</a></li>
-						
-						
+
+
 					</ul>
 				</div>
 			</div>
@@ -31,17 +31,19 @@
 		<ui:define name="content">
 
 			<div class="c-main-config">
-								<h:graphicImage value="/resources/img/bg-config.png" height="100%"
-									width="100%"></h:graphicImage>
+				<h:graphicImage value="/resources/img/bg-config.png" height="100%"
+					width="100%"></h:graphicImage>
 				<div class="c-flex-config">
 					<div class="p-config-izq">
 						<ul class="config-list">
 							<li><a href="#" class="config-link">Editar perfil</a></li>
-							<li><a href="c_editSusR.xhtml" class="config-link">Administrar suscripción</a></li>
+							<li><a href="c_editSusR.xhtml" class="config-link">Administrar
+									suscripción</a></li>
 							<li><a href="#" class="config-link">Ayuda</a></li>
 							<br />
 							<br />
-							<li><a href="home.xhtml" class="config-link">Cerrar sesión</a></li>
+							<li><a href="home.xhtml" class="config-link">Cerrar
+									sesión</a></li>
 						</ul>
 						<h:graphicImage value="/resources/img/g-config.svg" height="60%"
 							width="60%">
@@ -49,71 +51,71 @@
 
 					</div>
 					<div class="p-config-der">
-						<div class="c-editarperfil">
-							<div class="c-1">
-								<h2 class="t-h2-editarPerfil">Editar perfil</h2>
-								<h:form id="editarperfil-form" prependId="false">
-									<h:outputLabel for="Correo electronico" id="l-EP-email"
-										value="Email " styleClass="control-label" />
-									<br />
 
-									<h:inputText autocomplete="off" id="i-EP-email"
-										styleClass="form-control" value="" maxlength="45"
-										required="true" />
-									<br />
-									<br />
-									<h:outputLabel for="Contraseña" id="l-EP-password"
-										value="Password " styleClass="control-label" />
-									<br />
+						<h:form id="editarperfil-form" prependId="false">
+						<div>
+						<h2 class="t-h2-editarPerfil">Editar perfil</h2>
+							<h:outputLabel for="Correo electronico" id="l-EP-email"
+								value="Email " styleClass="control-label" />
+							<br />
 
-									<h:inputSecret autocomplete="off" id="i-EP-password" value=""
-										maxlength="45" required="true" styleClass="form-control" />
-								</h:form>
+							<h:inputText autocomplete="off" id="i-EP-email"
+								styleClass="form-control" value="" maxlength="45"
+								required="true" />
+							<br />
+							<br />
+							<h:outputLabel for="Contraseña" id="l-EP-password"
+								value="Password " styleClass="control-label" />
+							<br />
 
-							</div>
-							<div class="c-2"></div>
-							<h:form id="editarperfil2-form" prependId="false">
+							<h:inputSecret autocomplete="off" id="i-EP-password" value=""
+								maxlength="45" required="true" styleClass="form-control" />
 
-								<h:outputLabel for="Nombres Completos"
-									id="l-EP-NombresCompletos" value="Nombres Completos "
-									styleClass="control-label" />
-								<br />
-								<h:inputText autocomplete="off" id="i-EP-nombrescompletos"
-									styleClass="form-control" value="" maxlength="45"
-									required="true" />
-								<br />
-								<br />
-								<h:outputLabel for="Apellidos Completos"
-									id="l-EP-ApellidosCompletos" value="Apellidos Completos "
-									styleClass="control-label" />
-								<br />
-								<h:inputSecret autocomplete="off" id="i-EP-apellidoscompletos"
-									value="" maxlength="45" required="true"
-									styleClass="form-control" />
-								<br />
-								<br />
-								<h:outputLabel for="Numero Telefonico" id="l-EP-numerotelef"
-									value="Número Telefónico " styleClass="control-label" />
-								<br />
-								<h:inputSecret autocomplete="off" id="i-EP-numerotelef" value=""
-									maxlength="45" required="true" styleClass="form-control" />
-								<br />
-								<br />
-								<h:outputLabel for="Dirección" id="l-EP-direccion"
-									value="Dirección " styleClass="control-label" />
-								<br />
-								<h:inputSecret autocomplete="off" id="i-EP-direccion" value=""
-									maxlength="45" required="true" styleClass="form-control" />
-							</h:form>
+</div><div>
 
-						</div>
-						<div class="c-editarpefil-btns">
-							<h:commandButton id="btn-EP-cancelar" value="Cancelar" /><br />
+
+							<h:outputLabel for="Nombres Completos" id="l-EP-NombresCompletos"
+								value="Nombres Completos " styleClass="control-label" />
+							<br />
+							<h:inputText autocomplete="off" id="i-EP-nombrescompletos"
+								styleClass="form-control" value="" maxlength="45"
+								required="true" />
+							<br />
+							<br />
+							<h:outputLabel for="Apellidos Completos"
+								id="l-EP-ApellidosCompletos" value="Apellidos Completos "
+								styleClass="control-label" />
+							<br />
+							<h:inputSecret autocomplete="off" id="i-EP-apellidoscompletos"
+								value="" maxlength="45" required="true"
+								styleClass="form-control" />
+							<br />
+							<br />
+							<h:outputLabel for="Numero Telefonico" id="l-EP-numerotelef"
+								value="Número Telefónico " styleClass="control-label" />
+							<br />
+							<h:inputSecret autocomplete="off" id="i-EP-numerotelef" value=""
+								maxlength="45" required="true" styleClass="form-control" />
+							<br />
+							<br />
+							<h:outputLabel for="Dirección" id="l-EP-direccion"
+								value="Dirección " styleClass="control-label" />
+							<br />
+							<h:inputSecret autocomplete="off" id="i-EP-direccion" value=""
+								maxlength="45" required="true" styleClass="form-control" />
+
+							<br />
+							<br />
+
+
+							<h:commandButton id="btn-EP-cancelar" value="Cancelar" />
+							<br />								<br />
+													
+							
 							<h:commandButton id="btn-EP-actualizarcambios"
-								value="Actualizar cambios" onclick="alert('Cambios guardados')"/>
-
-						</div>
-
+								value="Actualizar cambios" onclick="alert('Cambios guardados')" />
+								</div>
+						</h:form>
 					</div>
 
 				</div>

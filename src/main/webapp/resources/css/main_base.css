@@ -295,6 +295,41 @@ img {
 	border-radius: 15px;
 	box-shadow: 0px 8px 40px rgba(51, 101, 138, 0.18);
 }
+.p-infoprop-der{
+	background: rgba(255,255,255,0.95);
+	width: 60%;
+	height: 448px;
+	border-radius: 15px;
+	box-shadow: 0px 8px 40px rgba(51, 101, 138, 0.18);
+	padding:2em;
+}
+.p-infoprop-der h2{
+		text-align: center;
+	
+}
+
+.p-infov-izq{
+	background: rgba(255,255,255,0.95);
+	width: 35%;
+	height: 448px;
+	padding: 2.5em;
+	border-radius: 15px;
+	box-shadow: 0px 8px 40px rgba(51, 101, 138, 0.18);
+	
+}
+
+.p-infov-izq h3 {
+	text-align: center;
+}	
+
+
+#vervivienda-prop-form{
+	display: flex;
+	justify-content: space-around;
+}
+#vervivienda-prop-form div{
+	padding: 2em;
+}
 
 .t-h2-editarPerfil{
 	font-weight: 800;
@@ -315,33 +350,19 @@ img {
 	width: 200px;
 	border: 1px solid grey;
 }
-#i-EP-nombrescompletos, #i-EP-apellidoscompletos{
+#i-EP-nombrescompletos, #i-EP-apellidoscompletos, #i-VV-dni, #i-VV-email,
+#i-VV-direccion, #i-VV-nrocuartos, #i-VV-nrobanos, #i-VV-nropisos{
 	height: 36px;
 	background: #F0F0F0 0% 0% no-repeat padding-box;
 	border-radius: 6px;;
-	width: 200px;
+	width: 170px;
 	border: 1px solid grey;
 }
 
 
 
-.c-editarperfil {
-	display: flex;
-	padding: 1.5em;
-	justify-content: space-around;
-	align-content: center;
-	margin-top:30px;
-	
-}
 
-
-.c-editarpefil-btns {
-	padding: 0.5em 1.5em;
-	display: flex;
-	justify-content: flex-end;
-}
-
-#btn-EP-cancelar {
+#btn-EP-cancelar, #btn-VV-bloquear {
 	font-size: 16px;
 	border: none;
 	font-family: 'Be Vietnam Pro';
@@ -349,10 +370,10 @@ img {
 	font-weight: 700;
 	background: white;
 	border-radius: 30px;
-	padding: 0.6em 1.7em;
+	padding: 0.4em 1.7em;
 	border: 2px solid gray;
 }
-#btn-EP-cancelar:hover{
+#btn-EP-cancelar:hover, #btn-VV-bloquear:hover{
 	background: #F0F0F0;
 }
 
@@ -404,6 +425,16 @@ img {
 	margin-top:2em;
 	width: 60%;
 }
+
+#editarperfil-form{
+	display: flex;
+	justify-content: space-around;
+}
+#editarperfil-form div{
+	
+	padding: 2em;
+}
+
 
 #cbo-distrito, #cbo-mascota, #cbo-edad{
 	background: #86bbd8;
@@ -528,6 +559,10 @@ height: 36px;
 }
 #registro-vivienda div{
 	padding:2em;
+}
+
+.c-info-prop{
+	padding:3em;
 }
 
 
