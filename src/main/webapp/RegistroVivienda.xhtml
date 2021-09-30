@@ -1,0 +1,104 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition template="templates/common.xhtml">
+		<ui:define name="header">
+			<div class="h-header">
+				<h1 class="logo_findr">FindRoomie</h1>
+				<div class="navigation">
+					<ul class="enlaces">
+						<li><a href="home.xhtml" class="header-link">Inicio</a></li>
+						<li><a href="#" class="header-link">Sobre Nosotros</a></li>
+						<li><a href="#" class="header-link">Lugares</a></li>
+						<li><a href="#" class="header-link">Contacto</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</ui:define>
+
+		<ui:define name="content">
+
+			<div class="v-main-config">
+								<h:graphicImage value="/resources/img/bg-config.png" height="100%"
+									width="100%"></h:graphicImage>
+				<div class="registroV">
+
+					
+						<h2>Registro de vivienda</h2>
+						<h:form id="registro-vivienda" prependId="false">
+
+							<div>
+							<h:outputLabel for="Nombres de Vivienda" id="l-RV-nombrevivienda"
+								value="Nombre de Vivienda " styleClass="control-label" />
+							<br />
+							<h:inputText autocomplete="off" id="i-RV-nombrevivienda"
+								styleClass="form-control" value="" maxlength="45"
+								required="true" />
+							<br />
+							<br />
+
+							<h:outputLabel for="Direccion"
+								id="l-RE-direccion" value="Direccion "
+								styleClass="control-label" />
+							<br />
+							<h:inputText autocomplete="off" id="i-RV-direccion"
+								value="" maxlength="45" required="true"
+								styleClass="form-control" />
+							<br />
+							<br />
+
+							<h:outputLabel for="NroCuartos" id="l-RV-nrocuartos"
+								value="Nro de cuartos " styleClass="control-label" />
+							<br />
+							<h:inputText autocomplete="off" id="i-RV-nrocuartos" value=""
+								maxlength="45" required="true" styleClass="form-control" />
+							</div>
+							<div>
+							<h:outputLabel for="NroBaños" id="l-RV-nrobanios"
+								value="Nro de Baños " styleClass="control-label" />
+							<br />
+							<h:inputText autocomplete="off" id="i-RV-nrobanios" value=""
+								maxlength="45" required="true" styleClass="form-control" />
+							
+							<br />
+							<br />
+
+							<h:outputLabel for="NroPisos" id="l-RV-nropisos"
+								value="Nro de Pisos " styleClass="control-label" />
+							<br />
+							<h:inputText autocomplete="off" id="i-RV-nropisos"
+								styleClass="form-control" value="" maxlength="45"
+								required="true" />
+							<br />
+							<br />
+								
+							<h:outputLabel for="NroPersonas" id="l-RV-nropersonas"
+								value="Nro de Personas " styleClass="control-label" />
+							<br />
+							<h:inputText autocomplete="off" id="i-RV-nropersonas"
+								styleClass="form-control" value="" maxlength="45"
+								required="true" />	
+		
+							<br />
+							<br />
+					
+
+							<h:commandButton id="btn-RE-registroR"
+							value="Registrar" onclick="alert('Cliente registrado')"/>
+							</div>
+	</h:form>
+					</div>
+				</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
