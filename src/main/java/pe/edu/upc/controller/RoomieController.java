@@ -22,6 +22,7 @@ public class RoomieController implements Serializable {
 	
 	@Inject
 	private IRoomieService rService;
+	@Inject
 	private IViviendaService vService;
 	private Roomie roomie;
 	private Vivienda vivienda;

@@ -34,9 +34,12 @@
 					<div class="d-login">
 						<a href="Login.xhtml" class="l-propietarios">ir a Login para
 							roomies</a> <br /> <br />
-						<h1 class="t-login">Entra a la comunidad.</h1>
+						<h1 class="t-login">¿Cómo quien quieres ingresar?.</h1>
 						<br />
-						<p class="t-eresnuevo">¿Eres nuevo?<a href="RegistroP.xhtml" class="registrate-aqui"> Registrate aquí.</a></p>
+						<p class="t-eresnuevo">
+							¿Eres nuevo?<a href="RegistroP.xhtml" class="registrate-aqui">
+								Registrate aquí.</a>
+						</p>
 						<br />
 						<h:form id="login-form" prependId="false">
 							<p:messages autoUpdate="true" />
@@ -45,7 +48,7 @@
 							<br />
 
 							<h:inputText autocomplete="off" id="correoElectronicoP"
-								styleClass="form-control" value="" maxlength="45"
+								styleClass="form-control" maxlength="45"
 								required="true" />
 							<br />
 							<br />
@@ -53,10 +56,16 @@
 								styleClass="control-label" />
 							<br />
 
-							<h:inputSecret autocomplete="off" id="contraseniaP" value=""
+							<h:inputSecret autocomplete="off" id="contraseniaP"
 								maxlength="45" required="true" styleClass="form-control" />
 							<br />
 							<br />
+							<p:outputLabel for="Propietario" value="Propietario " />
+							<p:selectOneMenu id="Propietario"
+								converter="omnifaces.SelectItemsConverter">
+								<f:selectItems value="#{propietarioController.listaPropietario}" var="d"
+									itemLabel="#{d.DNIP}" itemValue="#{d}" />
+							</p:selectOneMenu>
 							<h:commandButton id="btnEntrar" value="Entrar" />
 
 						</h:form>

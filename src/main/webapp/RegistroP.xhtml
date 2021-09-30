@@ -28,8 +28,8 @@
 		<ui:define name="content">
 
 			<div class="r-main-config">
-								<h:graphicImage value="/resources/img/bg-config.png" height="100%"
-									width="100%"></h:graphicImage>
+				<h:graphicImage value="/resources/img/bg-config.png" height="100%"
+					width="100%"></h:graphicImage>
 				<div class="registro1R">
 
 					<div class="r-1">
@@ -41,7 +41,7 @@
 								value="Nombres Completos " styleClass="control-label" />
 							<br />
 							<h:inputText autocomplete="off" id="i-RE-nombrescompletos"
-								styleClass="form-control" value="" maxlength="45"
+								styleClass="form-control" value="#{propietarioController.propietario.nombreP}" maxlength="45"
 								required="true" />
 							<br />
 							<br />
@@ -51,24 +51,42 @@
 								styleClass="control-label" />
 							<br />
 							<h:inputText autocomplete="off" id="i-RE-apellidoscompletos"
-								value="" maxlength="45" required="true"
+								value="#{propietarioController.propietario.apellidoP}" maxlength="45" required="true"
 								styleClass="form-control" />
 							<br />
 							<br />
 
+							<h:outputLabel for="DNI" id="l-RE-dni"
+								value="DNI " styleClass="control-label" />
+							<br />
+							<h:inputText autocomplete="off" id="i-RE-dni"
+								styleClass="form-control" value="#{propietarioController.propietario.DNIP}" maxlength="8"
+								required="true" />
+							<br />
+							<br />
+							
 							<h:outputLabel for="Nombre de usuario" id="l-RE-username"
 								value="Nombre de usuario " styleClass="control-label" />
 							<br />
-							<h:inputText autocomplete="off" id="i-RE-username" value=""
+							<h:inputText autocomplete="off" id="i-RE-username" value="#{propietarioController.propietario.usernameP}"
 								maxlength="45" required="true" styleClass="form-control" />
 							<br />
-
 							<br />
+							
+							<h:outputLabel for="Edad" id="l-RE-edad"
+								value="Edad " styleClass="control-label" />
+							<br />
+							<h:inputText autocomplete="off" id="i-RE-edad"
+								styleClass="form-control" value="#{propietarioController.propietario.edadP}" maxlength="2"
+								required="true" />
+							<br />
+							<br />
+							
 							<h:outputLabel for="FNacimiento" id="l-RE-fnacimiento"
 								value="Fecha de Nacimiento: " styleClass="control-label" />
 							<br />
 
-							<p:calendar id="ca-RE-fnacimiento" pattern="dd/MM/yyyy" value=""
+							<p:calendar id="ca-RE-fnacimiento" pattern="dd/MM/yyyy" value="#{propietarioController.propietario.FNacimientoP}"
 								showOn="button" timeZone="UTC" required="true">
 							</p:calendar>
 							<br />
@@ -78,64 +96,62 @@
 								value="NroCelular " styleClass="control-label" />
 							<br />
 							<h:inputText autocomplete="off" id="i-RE-nrocelular"
-								styleClass="form-control" value="" maxlength="45"
+								styleClass="form-control" value="#{propietarioController.propietario.nroCelularP}" maxlength="9"
 								required="true" />
-		
-						</h:form>
-					</div>
-					<div class="r-2">
-						<h:form id="registro2-roomie-form" prependId="false">
+							<br />
+							<br />
 
 							<h:outputLabel for="Correo electronico" id="l-RE-email"
 								value="Email " styleClass="control-label" />
 							<br />
 							<h:inputText autocomplete="off" id="i-RE-email"
-								styleClass="form-control" value="" maxlength="45"
+								styleClass="form-control" value="#{propietarioController.propietario.emailP}" maxlength="45"
 								required="true" />
 							<br />
 							<br />
-
-
+							
+							<h:outputLabel for="Contraseña" id="l-RE-password"
+								value="Contraseña " styleClass="control-label" />
+							<br />
+							<h:inputSecret autocomplete="off" id="i-RE-password" value="#{propietarioController.propietario.contraseniaP}"
+								maxlength="15" required="true" styleClass="form-control" />
+							<br />
+							<br />
+							
 							<h:outputLabel for="Genero" id="l-RE-genero" value="Género: "
 								styleClass="control-label" />
 							<br />
-							<h:selectOneMenu id="cbo-RE-genero" value="#{userData.data}">
-								<f:selectItem itemValue="1" itemLabel="Masculino" />
-								<f:selectItem itemValue="2" itemLabel="Femenino" />
-								<f:selectItem itemValue="2" itemLabel="Helicóptero apache" />
+							<h:selectOneMenu id="cbo-RE-genero" value="#{propietarioController.propietario.generoP}">
+								<f:selectItem itemValue="Masculino" itemLabel="Masculino" />
+								<f:selectItem itemValue="Femenino" itemLabel="Femenino" />
+								<f:selectItem itemValue="Helicóptero apache" itemLabel="Helicóptero apache" />
 							</h:selectOneMenu>
 							<br />
 							<br />
+							
 							<h:outputLabel for="Nacionalidad" id="l-RE-nacionalidad"
 								value="Nacionalidad " styleClass="control-label" />
 							<br />
 							<h:inputText autocomplete="off" id="i-RE-nacionalidad"
-								styleClass="form-control" value="" maxlength="45"
+								styleClass="form-control" value="#{propietarioController.propietario.nacionalidadP}" maxlength="45"
 								required="true" />
 							<br />
 							<br />
-							<h:outputLabel for="Contraseña" id="l-RE-password"
-								value="Password " styleClass="control-label" />
-							<br />
-							<h:inputSecret autocomplete="off" id="i-RE-password" value=""
-								maxlength="45" required="true" styleClass="form-control" />
-
-							<br />
-							<br />
+							
 							<h:outputLabel for="Presentación" id="l-RE-presentacion"
 								value="Presentación " styleClass="control-label" />
 							<br />
 
 							<h:inputTextarea autocomplete="off" id="i-RE-presentacion"
-								styleClass="form-control" value="" maxlength="500"
+								styleClass="form-control" value="#{propietarioController.propietario.presentacionP}" maxlength="500"
 								required="true" />
-								<br />
 							<br />
-					
-							<h:commandButton id="btn-RE-registroR"
-							value="Registrar" onclick="alert('Cliente registrado')"/>
-								
+							<br />
 
+							<h:commandButton id="btn-RE-registroR" value="Registrar"
+								actionListener="#{propietarioController.insertarPropietario()}"
+								onclick="alert('Propietario registrado')"
+								action="home?faces-redirect=true" />
 
 						</h:form>
 					</div>

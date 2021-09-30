@@ -46,7 +46,7 @@
 								styleClass="control-label" />
 								<br />
 							<h:inputText autocomplete="off" id="correoElectronico"
-								styleClass="form-control" value="" maxlength="45"
+								styleClass="form-control" maxlength="45"
 								required="true" />
 							<br />
 							<br />
@@ -55,12 +55,18 @@
 								<br />
 								
 							<h:inputSecret autocomplete="off" id="contrasenia"
-								styleClass="form-control" value="" maxlength="45"
+								styleClass="form-control" maxlength="45"
 								required="true" />
 							<br />
 							<br />
-							<h:commandButton id="btnEntrar"   value="Entrar" />
-
+							<p:outputLabel for="Roomie" value="Roomie " />
+							<p:selectOneMenu id="Roomie"
+								converter="omnifaces.SelectItemsConverter">
+								<f:selectItems value="#{roomieController.listaRoomie}" var="d"
+									itemLabel="#{d.DNIR}" itemValue="#{d}" />
+							</p:selectOneMenu>
+							<h:commandButton id="btnEntrar" value="Entrar" 
+								action="RoomieInicio?faces-redirect=true"/>
 
 						</h:form>
 					</div>
