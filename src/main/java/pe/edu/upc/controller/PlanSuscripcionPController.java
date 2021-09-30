@@ -24,7 +24,9 @@ public class PlanSuscripcionPController implements Serializable {
 	
 	@Inject
 	private IPlanSuscripcionPService pspService;
+	@Inject
 	private IPropietarioService pService;
+	@Inject
 	private ISuscripcionService sService;
 	private PlanSuscripcionP planSuscripcionP;
 	private Propietario propietario;

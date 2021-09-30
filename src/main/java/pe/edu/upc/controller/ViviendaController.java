@@ -14,20 +14,24 @@ import pe.edu.upc.entity.Propietario;
 import pe.edu.upc.service.IViviendaService;
 import pe.edu.upc.service.IPropietarioService;
 
+import pe.edu.upc.util.Message;
+
+
 @Named
 @RequestScoped
 public class ViviendaController implements Serializable {
 
 	private static final long serialVersionUID = -6186585572086714609L;
-	
+
 	@Inject
 	private IViviendaService vService;
+	@Inject
 	private IPropietarioService pService;
 	private Vivienda vivienda;
 	private Propietario propietario;
 	List<Vivienda> listaVivienda;
 	List<Propietario> listaPropietario;
-	
+
 	@PostConstruct
 	public void init() {
 		this.listaVivienda = new ArrayList<Vivienda>();
@@ -37,12 +41,12 @@ public class ViviendaController implements Serializable {
 		this.listarVivienda();
 		this.listarPropietario();
 	}
-	
+
 	public String nuevoVivienda() {
 		this.setVivienda(new Vivienda());
 		return "vivienda.xhtml";
 	}
-	
+
 	public String modificarVivienda() {
 		return "vivienda.xhtml";
 	}
@@ -52,31 +56,38 @@ public class ViviendaController implements Serializable {
 		this.limpiarVivienda();
 		this.listarVivienda();
 	}
-	
+
 	public void listarVivienda() {
 		listaVivienda = vService.listar();
 	}
-	
+
 	public void listarPropietario() {
 		listaPropietario = pService.listar();
 	}
-	
-	public void mostrarVivienda(int idVivienda) {
-		vivienda = vService.mostrar(idVivienda);
+
+	public String mostrarVivienda(int idVivienda) {
+		String view = "";
+		try {
+			vivienda = vService.mostrar(idVivienda);
+			
+		} catch (Exception e) {
+			Message.messageError("Error  en vivienda: " + e.getMessage());
+		}
+		return view;
 	}
-	
+
 	public void mostrarPropietario(int idPropietario) {
 		propietario = pService.mostrar(idPropietario);
 	}
-	
+
 	public void actualizarVivienda() {
 		vService.actualizar(vivienda);
 	}
-	
+
 	public void eliminarVivienda(Vivienda vivienda) {
 		vService.eliminar(vivienda.getIdVivienda());
 	}
-	
+
 	public void limpiarVivienda() {
 		this.init();
 	}
@@ -112,5 +123,5 @@ public class ViviendaController implements Serializable {
 	public void setListaVivienda(List<Vivienda> listaVivienda) {
 		this.listaVivienda = listaVivienda;
 	}
-	
+
 }

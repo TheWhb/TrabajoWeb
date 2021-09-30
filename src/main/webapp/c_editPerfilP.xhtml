@@ -27,14 +27,15 @@
 		<ui:define name="content">
 
 			<div class="c-main-config">
-								<h:graphicImage value="/resources/img/bg-config.png" height="100%"
-									width="100%"></h:graphicImage>
+				<h:graphicImage value="/resources/img/bg-config.png" height="100%"
+					width="100%"></h:graphicImage>
 				<div class="c-flex-config">
 					<div class="p-config-izq">
 						<ul class="config-list">
 							<li><a href="#" class="config-link">Editar perfil</a></li>
 							<li><a href="#" class="config-link">Editar preferencias</a></li>
-							<li><a href="#" class="config-link">Administrar suscripción</a></li>
+							<li><a href="#" class="config-link">Administrar
+									suscripción</a></li>
 							<li><a href="#" class="config-link">Ayuda</a></li>
 							<br />
 							<br />
@@ -55,29 +56,45 @@
 									<br />
 
 									<h:inputText autocomplete="off" id="i-EP-email"
-										styleClass="form-control" value="" maxlength="45"
-										required="true" />
+										styleClass="form-control"
+										value="#{propietarioController.propietario.emailP}"
+										maxlength="45" required="true" />
 									<br />
 									<br />
 									<h:outputLabel for="Contraseña" id="l-EP-password"
 										value="Password " styleClass="control-label" />
 									<br />
 
-									<h:inputSecret autocomplete="off" id="i-EP-password" value=""
+									<h:inputSecret autocomplete="off" id="i-EP-password"
+										value="#{propietarioController.propietario.contraseniaP}"
+										maxlength="45" required="true" styleClass="form-control" />
+
+									<br />
+									<h:outputLabel for="Genero" id="l-EP-genero"
+										value="Genero " styleClass="control-label" />
+									<br />
+									<h:inputSecret autocomplete="off" id="i-EP-passwor"
+										value="#{propietarioController.propietario.generoP}"
 										maxlength="45" required="true" styleClass="form-control" />
 								</h:form>
 
 							</div>
 							<div class="c-2"></div>
 							<h:form id="editarperfil2-form" prependId="false">
-
+								<p:selectOneMenu id="Propietario"
+									converter="omnifaces.SelectItemsConverter">
+									<f:selectItems
+										value="#{propietarioController.listaPropietario}" var="d"
+										itemLabel="#{d.DNIP}" itemValue="#{d}" />
+								</p:selectOneMenu>
 								<h:outputLabel for="Nombres Completos"
 									id="l-EP-NombresCompletos" value="Nombres Completos "
 									styleClass="control-label" />
 								<br />
 								<h:inputText autocomplete="off" id="i-EP-nombrescompletos"
-									styleClass="form-control" value="" maxlength="45"
-									required="true" />
+									styleClass="form-control"
+									value="#{propietarioController.propietario.nombreP}"
+									maxlength="45" required="true" />
 								<br />
 								<br />
 								<h:outputLabel for="Apellidos Completos"
@@ -85,29 +102,56 @@
 									styleClass="control-label" />
 								<br />
 								<h:inputSecret autocomplete="off" id="i-EP-apellidoscompletos"
-									value="" maxlength="45" required="true"
-									styleClass="form-control" />
+									value="#{propietarioController.propietario.apellidoP}"
+									maxlength="45" required="true" styleClass="form-control" />
 								<br />
 								<br />
 								<h:outputLabel for="Numero Telefonico" id="l-EP-numerotelef"
 									value="Número Telefónico " styleClass="control-label" />
 								<br />
-								<h:inputSecret autocomplete="off" id="i-EP-numerotelef" value=""
+								<h:inputSecret autocomplete="off" id="i-EP-numerotelef"
+									value="#{propietarioController.propietario.nroCelularP}"
 									maxlength="45" required="true" styleClass="form-control" />
 								<br />
 								<br />
-								<h:outputLabel for="Dirección" id="l-EP-direccion"
+								<h:outputLabel for="Presentación" id="l-EP-presentacion"
 									value="Dirección " styleClass="control-label" />
 								<br />
-								<h:inputSecret autocomplete="off" id="i-EP-direccion" value=""
+								<h:inputSecret autocomplete="off" id="i-EP-dire"
+									value="#{propietarioController.propietario.presentacionP}"
 									maxlength="45" required="true" styleClass="form-control" />
+								<br />
+								<br />
+								<h:outputLabel for="Presentación" id="l-EP-username"
+									value="Dirección " styleClass="control-label" />
+								<br />
+								<h:inputSecret autocomplete="off" id="i-EP-username"
+									value="#{propietarioController.propietario.usernameP}" maxlength="45"
+									required="true" styleClass="form-control" />
+									<h:outputLabel for="Dirección" id="l-EP-direc"
+								value="Dirección " styleClass="control-label" />
+							<br />
+							<h:inputSecret autocomplete="off" id="i-EP-edad" value="#{propietarioController.propietario.edadP}"
+								maxlength="45" required="true" styleClass="form-control" />
+
+							<br />
+							<br />
+							<h:outputLabel for="Nacionalidad" id="l-EP-nacionalidad"
+								value="Dirección " styleClass="control-label" />
+							<br />
+							<h:inputSecret autocomplete="off" id="i-EP-nacionalidad" value="#{propietarioController.propietario.nacionalidadP}"
+								maxlength="45" required="true" styleClass="form-control" />
+
+							
+
+							
 							</h:form>
 
 						</div>
 						<div class="c-editarpefil-btns">
-							<h:commandButton id="btn-EP-cancelar" value="Cancelar" /><br />
 							<h:commandButton id="btn-EP-actualizarcambios"
-								value="Actualizar cambios" />
+								value="Actualizar cambios"
+								actionListener="#{propietarioController.actualizarPropietario()}" />
 
 						</div>
 

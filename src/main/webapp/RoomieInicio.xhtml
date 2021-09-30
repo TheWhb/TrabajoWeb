@@ -16,12 +16,12 @@
 				<h1 class="logo_findr">FindRoomie</h1>
 				<div class="navigation">
 					<ul class="enlaces">
-						<li><a href="#" class="header-link">Inicio</a></li>
+						<li><a href="RoomieInicio" class="header-link">Inicio</a></li>
 						<li><a href="#" class="header-link">Sobre Nosotros</a></li>
 						<li><a href="#" class="header-link">Lugares</a></li>
 						<li><a href="#" class="header-link">Contacto</a></li>
 						<li><a href="c_editPerfilR.xhtml" class="header-link">Configuración</a></li>
-						
+
 						<!--           			<li><h:graphicImage id="imgpfp"   value="/resources/img/pfpuser.png" height="60%" width="60%" > -->
 						<!-- </h:graphicImage></li> -->
 						<li><a href="pSuscripcionR.xhtml" class="btn-sus1">Premium</a></li>
@@ -35,68 +35,102 @@
 		<ui:define name="content">
 			<div class="c-roomieinicio">
 				<div class="p-config-izq-pref">
-					<h:form id="login-form" prependId="false"> 
-				
-					<h3>¿Qué buscas?</h3>
-					<h:outputLabel for="Seleccionar Distrito" id="l-EPref-distrito"
-						value="Seleccionar distrito " styleClass="control-label" />
-					<br /><br />
-					<h:selectOneMenu id="cbo-distrito" value="#{userData.data}">
-						<f:selectItem itemValue="1" itemLabel="Distrito 1" />
-						<f:selectItem itemValue="2" itemLabel="Distrito 2" />
-						<f:selectItem itemValue="3" itemLabel="Distrito 3" />
-						<f:selectItem itemValue="4" itemLabel="Distrito 4" />
-					</h:selectOneMenu>
-					<br /> <br />
-					<h:outputLabel for="Seleccionar Rango de Edad" id="l-EPref-edad"
-						value="Seleccionar rango de edad " styleClass="control-label" />
-					<br /><br />
-					<h:selectOneMenu id="cbo-edad" value="#{userData.data}">
-						<f:selectItem itemValue="1" itemLabel="18-21" />
-						<f:selectItem itemValue="2" itemLabel="21-24" />
-						<f:selectItem itemValue="3" itemLabel="24-27" />
-						<f:selectItem itemValue="4" itemLabel="27-30" />
-					</h:selectOneMenu>
-					<br /> <br />
-					<h:outputLabel for="Mascotas " id="l-EPref-mascotas"
-						value="Mascotas " styleClass="control-label" />
-					<br /><br />
-					<h:selectOneMenu id="cbo-mascota" value="#{userData.data}">
-						<f:selectItem itemValue="1" itemLabel="Sin Mascotas" />
-						<f:selectItem itemValue="2" itemLabel="Con Mascotas" />
-					</h:selectOneMenu>
-				
+					<h:form id="login-form" prependId="false">
+
+						<h3>¿Qué buscas?</h3>
+						<h:outputLabel for="Seleccionar Distrito" id="l-EPref-distrito"
+							value="Seleccionar distrito " styleClass="control-label" />
+						<br />
+						<br />
+						<h:selectOneMenu id="cbo-distrito" value="#{userData.data}">
+							<f:selectItem itemValue="d1" itemLabel="Distrito de Lima" />
+							<f:selectItem itemValue="d2" itemLabel="Distrito de Breña" />
+							<f:selectItem itemValue="d3" itemLabel="Distrito de Los Olivos" />
+							<f:selectItem itemValue="d4" itemLabel="Distrito de Miraflores" />
+							<f:selectItem itemValue="d5" itemLabel="Distrito de Limaflores" />
+						</h:selectOneMenu>
+						<br />
+						<br />
+						<h:outputLabel for="Seleccionar Rango de Edad" id="l-EPref-edad"
+							value="Seleccionar rango de edad " styleClass="control-label" />
+						<br />
+						<br />
+						<h:selectOneMenu id="cbo-edad" value="#{userData.data}">
+							<f:selectItem itemValue="e1" itemLabel="18-21" />
+							<f:selectItem itemValue="e2" itemLabel="21-24" />
+							<f:selectItem itemValue="e3" itemLabel="24-27" />
+							<f:selectItem itemValue="e4" itemLabel="27-30" />
+						</h:selectOneMenu>
+						<br />
+						<br />
+						<h:outputLabel for="Mascotas " id="l-EPref-mascotas"
+							value="Mascotas " styleClass="control-label" />
+						<br />
+						<br />
+						<h:selectOneMenu id="cbo-mascota" value="#{userData.data}">
+							<f:selectItem itemValue="m1" itemLabel="Sin Mascotas" />
+							<f:selectItem itemValue="m2" itemLabel="Con Mascotas" />
+						</h:selectOneMenu>
+
 					</h:form>
 				</div>
+				
 				<div class="roomie-datatable">
+				<p:selectOneMenu id="Propietario"
+								converter="omnifaces.SelectItemsConverter">
+								<f:selectItems value="#{propietarioController.listaPropietario}" var="d"
+									itemLabel="#{d.DNIP}" itemValue="#{d}" />
+							</p:selectOneMenu>
 					<h:form id="dt-vivienda" prependId="false">
-						<p:dataTable id="lstVivienda" var="par"
-							value="#{parteController.listaPartes}" paginator="true"
+						<p:dataTable id="lstVivienda" var="viv"
+							value="#{viviendaController.listaVivienda}" paginator="true"
 							paginatorPosition="bottom" rowsPerPageTemplate="10,20,30,40,50"
 							rows="10" tableStyleClass="lstViv"
 							emptyMessage="No existen registros" rowIndexVar="item"
 							style="margin-bottom:0">
 
-							<p:column headerText="Nombre" sortBy="#{par.idParte}">
-								<h:outputText value="#{par.idParte}" />
+							<p:column headerText="Nombre" sortBy="#{viv.nombreV}">
+								<h:outputText value="#{viv.nombreV}" />
 							</p:column>
 
-							<p:column headerText="Direccion" sortBy="#{par.nombreParte}">
-								<h:outputText value="#{par.nombreParte}" />
+							<p:column headerText="Direccion" sortBy="#{viv.direccionV}">
+								<h:outputText value="#{viv.direccionV}" />
 							</p:column>
-							
-							<p:column headerText="Precio">
-								<h:outputText value="#{par.motor.nombreMotor}" />
+
+							<p:column headerText="Nro. Cuartos" sortBy="#{viv.NCuartos}">
+								<h:outputText value="#{viv.NCuartos}" />
 							</p:column>
-				
-							<p:column headerText="Operación" exportable="false">
-								<h:commandLink action="bloquearPropietario" value="Bloquear"
-									actionListener="#{parteController.eliminar(par)}" />
+
+							<p:column headerText="Nro. Baños" sortBy="#{viv.NBanios}">
+								<h:outputText value="#{viv.NBanios}" />
+							</p:column>
+
+							<p:column headerText="Nro. Pisos" sortBy="#{viv.NPisos}">
+								<h:outputText value="#{viv.NPisos}" />
+							</p:column>
+
+							<p:column headerText="Nro. Personas" sortBy="#{viv.NPersonas}">
+								<h:outputText value="#{viv.NPersonas}" />
+							</p:column>
+
+							<p:column headerText="Propietario"
+								sortBy="#{viv.propietarioV.nombreP}">
+								<h:outputText value="#{viv.propietarioV.nombreP}" />
+							</p:column>
+
+							<p:column headerText="Reservar" exportable="false">
+								<h:commandLink value="Reservar"
+									actionListener="#{roomieController.actaulizarVivienda(propietarioController.listaPropietario, viviendaController.listaVivienda)}"
+									/>
 							</p:column>
 
 						</p:dataTable>
+						
+						
 					</h:form>
 				</div>
+				
+				
 			</div>
 		</ui:define>
 	</ui:composition>

@@ -24,7 +24,9 @@ public class ReglaController implements Serializable {
 	
 	@Inject
 	private IReglaService rService;
+	@Inject
 	private IViviendaService vService;
+	@Inject
 	private ICaracteristicaService cService;
 	private Regla regla;
 	private Vivienda vivienda;

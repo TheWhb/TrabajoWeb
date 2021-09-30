@@ -75,8 +75,29 @@ public class RoomieController implements Serializable {
 		rService.actualizar(roomie);
 	}
 	
+	public void actaulizarVivienda(Roomie roomie, Vivienda idRoomie) {
+		rService.actualizarVivienda(roomie, idRoomie);
+	}
+	
 	public void limpiarRoomie() {
 		this.init();
+	}
+	
+	@SuppressWarnings("unlikely-arg-type")
+	public String iniciarSesionRoomie() {
+		this.listarRoomie();
+		List<Roomie> sesion = new ArrayList<Roomie>();
+		if (listaRoomie.contains(roomie.getEmailR())) {
+			sesion = rService.findByNameRoomie(roomie);
+			if (roomie.getContraseniaR().equals(sesion.get(0).getContraseniaR())) {
+				return "RoomieInicio.xhtml";
+			}
+			else {
+				return "alert('Datos incorrectos')";
+			}				
+		}
+		else 
+			return "alert('Datos incorrectos')";
 	}
 
 	public Roomie getRoomie() {

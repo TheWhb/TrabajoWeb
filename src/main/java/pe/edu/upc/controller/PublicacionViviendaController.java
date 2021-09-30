@@ -22,6 +22,7 @@ public class PublicacionViviendaController implements Serializable {
 	
 	@Inject
 	private IPublicacionViviendaService pvService;
+	@Inject
 	private IViviendaService vService;
 	private PublicacionVivienda publicacionVivienda;
 	private Vivienda vivienda;

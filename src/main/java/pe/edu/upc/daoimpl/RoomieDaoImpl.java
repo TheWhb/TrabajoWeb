@@ -11,6 +11,7 @@ import javax.transaction.Transactional;
 
 import pe.edu.upc.dao.IRoomieDao;
 import pe.edu.upc.entity.Roomie;
+import pe.edu.upc.entity.Vivienda;
 
 public class RoomieDaoImpl implements IRoomieDao, Serializable{
 	
@@ -47,6 +48,26 @@ public class RoomieDaoImpl implements IRoomieDao, Serializable{
 	public void actualizar(Roomie roomie) {
 		Roomie roomieViejo = new Roomie();
 		roomieViejo = em.getReference(Roomie.class, roomie.getIdRoomie());
+		em.remove(roomieViejo);
+		em.persist(roomie);
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Roomie> findByNameRoomie(Roomie r) {
+		List<Roomie> lista = new ArrayList<Roomie>();
+		Query q = em.createQuery("select r from Roomie r where r.emailR like ?1");
+		q.setParameter(1, r.getEmailR());
+		lista = (List<Roomie>) q.getResultList();
+		return lista;
+	}
+	
+	@Transactional
+	@Override
+	public void actualizarVivienda(Roomie roomie, Vivienda idRoomie) {
+		Roomie roomieViejo = new Roomie();
+		roomieViejo = em.getReference(Roomie.class, roomie.getIdRoomie());
+		roomieViejo.setViviendaR(idRoomie);
 		em.remove(roomieViejo);
 		em.persist(roomie);
 	}
