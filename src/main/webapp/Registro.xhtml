@@ -1,0 +1,147 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition template="templates/common.xhtml">
+		<ui:define name="header">
+			<div class="h-header">
+				<h1 class="logo_findr">FindRoomie</h1>
+				<div class="navigation">
+					<ul class="enlaces">
+						<li><a href="home.xhtml" class="header-link">Inicio</a></li>
+						<li><a href="#" class="header-link">Sobre Nosotros</a></li>
+						<li><a href="#" class="header-link">Lugares</a></li>
+						<li><a href="#" class="header-link">Contacto</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</ui:define>
+
+		<ui:define name="content">
+
+			<div class="r-main-config">
+								<h:graphicImage value="/resources/img/bg-config.png" height="100%"
+									width="100%"></h:graphicImage>
+				<div class="registro1R">
+
+					<div class="r-1">
+						<h2>Registro</h2>
+						<h:form id="registro1-roomie-form" prependId="false">
+
+
+							<h:outputLabel for="Nombres Completos" id="l-RE-NombresCompletos"
+								value="Nombres Completos " styleClass="control-label" />
+							<br />
+							<h:inputText autocomplete="off" id="i-RE-nombrescompletos"
+								styleClass="form-control" value="" maxlength="45"
+								required="true" />
+							<br />
+							<br />
+
+							<h:outputLabel for="Apellidos Completos"
+								id="l-RE-ApellidosCompletos" value="Apellidos Completos "
+								styleClass="control-label" />
+							<br />
+							<h:inputText autocomplete="off" id="i-RE-apellidoscompletos"
+								value="" maxlength="45" required="true"
+								styleClass="form-control" />
+							<br />
+							<br />
+
+							<h:outputLabel for="Nombre de usuario" id="l-RE-username"
+								value="Nombre de usuario " styleClass="control-label" />
+							<br />
+							<h:inputText autocomplete="off" id="i-RE-username" value=""
+								maxlength="45" required="true" styleClass="form-control" />
+							<br />
+
+							<br />
+							<h:outputLabel for="FNacimiento" id="l-RE-fnacimiento"
+								value="Fecha de Nacimiento: " styleClass="control-label" />
+							<br />
+
+							<p:calendar id="ca-RE-fnacimiento" pattern="dd/MM/yyyy" value=""
+								showOn="button" timeZone="UTC" required="true">
+							</p:calendar>
+							<br />
+							<br />
+
+							<h:outputLabel for="Nro de celular" id="l-RE-nrocelular"
+								value="NroCelular " styleClass="control-label" />
+							<br />
+							<h:inputText autocomplete="off" id="i-RE-nrocelular"
+								styleClass="form-control" value="" maxlength="45"
+								required="true" />
+		
+						</h:form>
+					</div>
+					<div class="r-2">
+						<h:form id="registro2-roomie-form" prependId="false">
+
+							<h:outputLabel for="Correo electronico" id="l-RE-email"
+								value="Email " styleClass="control-label" />
+							<br />
+							<h:inputText autocomplete="off" id="i-RE-email"
+								styleClass="form-control" value="" maxlength="45"
+								required="true" />
+							<br />
+							<br />
+
+
+							<h:outputLabel for="Genero" id="l-RE-genero" value="Género: "
+								styleClass="control-label" />
+							<br />
+							<h:selectOneMenu id="cbo-RE-genero" value="#{userData.data}">
+								<f:selectItem itemValue="1" itemLabel="Masculino" />
+								<f:selectItem itemValue="2" itemLabel="Femenino" />
+								<f:selectItem itemValue="2" itemLabel="Helicóptero apache" />
+							</h:selectOneMenu>
+							<br />
+							<br />
+							<h:outputLabel for="Nacionalidad" id="l-RE-nacionalidad"
+								value="Nacionalidad " styleClass="control-label" />
+							<br />
+							<h:inputText autocomplete="off" id="i-RE-nacionalidad"
+								styleClass="form-control" value="" maxlength="45"
+								required="true" />
+							<br />
+							<br />
+							<h:outputLabel for="Contraseña" id="l-RE-password"
+								value="Password " styleClass="control-label" />
+							<br />
+							<h:inputSecret autocomplete="off" id="i-RE-password" value=""
+								maxlength="45" required="true" styleClass="form-control" />
+
+							<br />
+							<br />
+							<h:outputLabel for="Presentación" id="l-RE-presentacion"
+								value="Presentación " styleClass="control-label" />
+							<br />
+
+							<h:inputTextarea autocomplete="off" id="i-RE-presentacion"
+								styleClass="form-control" value="" maxlength="500"
+								required="true" />
+								<br />
+							<br />
+					
+							<h:commandButton id="btn-RE-registroR"
+							value="Registrar" onclick="alert('Cliente registrado')"/>
+								
+
+
+						</h:form>
+					</div>
+				</div>
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
