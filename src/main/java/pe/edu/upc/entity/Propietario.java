@@ -2,6 +2,7 @@ package pe.edu.upc.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -43,6 +44,9 @@ public class Propietario implements Serializable {
 	@Column(name="EmailP", nullable=false, length=40)
 	private String EmailP;
 	
+	@Column(name="ContraseniaP", nullable=false, length=15)
+	private String ContraseniaP;
+	
 	@Column(name="NacionalidadP", nullable=false, length=20)
 	private String NacionalidadP;
 	
@@ -54,8 +58,8 @@ public class Propietario implements Serializable {
 	}
 
 	public Propietario(int idPropietario, String nombreP, String apellidoP, int dNIP, String usernameP, int edadP,
-			Date fNacimientoP, String generoP, int nroCelularP, String emailP, String nacionalidadP,
-			String presentacionP) {
+			Date fNacimientoP, String generoP, int nroCelularP, String emailP, String contraseniaP,
+			String nacionalidadP, String presentacionP) {
 		super();
 		this.idPropietario = idPropietario;
 		NombreP = nombreP;
@@ -67,6 +71,7 @@ public class Propietario implements Serializable {
 		GeneroP = generoP;
 		NroCelularP = nroCelularP;
 		EmailP = emailP;
+		ContraseniaP = contraseniaP;
 		NacionalidadP = nacionalidadP;
 		PresentacionP = presentacionP;
 	}
@@ -151,6 +156,14 @@ public class Propietario implements Serializable {
 		EmailP = emailP;
 	}
 
+	public String getContraseniaP() {
+		return ContraseniaP;
+	}
+
+	public void setContraseniaP(String contraseniaP) {
+		ContraseniaP = contraseniaP;
+	}
+
 	public String getNacionalidadP() {
 		return NacionalidadP;
 	}
@@ -166,7 +179,28 @@ public class Propietario implements Serializable {
 	public void setPresentacionP(String presentacionP) {
 		PresentacionP = presentacionP;
 	}
-	
-	//Public boolean 
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(ApellidoP, ContraseniaP, DNIP, EdadP, EmailP, FNacimientoP, GeneroP, NacionalidadP,
+				NombreP, NroCelularP, PresentacionP, UsernameP, idPropietario);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Propietario other = (Propietario) obj;
+		return Objects.equals(ApellidoP, other.ApellidoP) && Objects.equals(ContraseniaP, other.ContraseniaP)
+				&& DNIP == other.DNIP && EdadP == other.EdadP && Objects.equals(EmailP, other.EmailP)
+				&& Objects.equals(FNacimientoP, other.FNacimientoP) && Objects.equals(GeneroP, other.GeneroP)
+				&& Objects.equals(NacionalidadP, other.NacionalidadP) && Objects.equals(NombreP, other.NombreP)
+				&& NroCelularP == other.NroCelularP && Objects.equals(PresentacionP, other.PresentacionP)
+				&& Objects.equals(UsernameP, other.UsernameP) && idPropietario == other.idPropietario;
+	}
 	
 }

@@ -41,7 +41,7 @@
 								value="Nombres Completos " styleClass="control-label" />
 							<br />
 							<h:inputText autocomplete="off" id="i-RE-nombrescompletos"
-								styleClass="form-control" value="" maxlength="45"
+								styleClass="form-control" value="#{roomieController.roomie.nombreR}" maxlength="45"
 								required="true" />
 							<br />
 							<br />
@@ -51,7 +51,7 @@
 								styleClass="control-label" />
 							<br />
 							<h:inputText autocomplete="off" id="i-RE-apellidoscompletos"
-								value="" maxlength="45" required="true"
+								value="#{roomieController.roomie.apellidoR}" maxlength="45" required="true"
 								styleClass="form-control" />
 							<br />
 							<br />
@@ -59,7 +59,7 @@
 							<h:outputLabel for="Nombre de usuario" id="l-RE-username"
 								value="Nombre de usuario " styleClass="control-label" />
 							<br />
-							<h:inputText autocomplete="off" id="i-RE-username" value=""
+							<h:inputText autocomplete="off" id="i-RE-username" value="#{roomieController.roomie.usernameR}"
 								maxlength="45" required="true" styleClass="form-control" />
 							<br />
 
@@ -68,7 +68,7 @@
 								value="Fecha de Nacimiento: " styleClass="control-label" />
 							<br />
 
-							<p:calendar id="ca-RE-fnacimiento" pattern="dd/MM/yyyy" value=""
+							<p:calendar id="ca-RE-fnacimiento" pattern="dd/MM/yyyy" value="#{roomieController.roomie.FNacimientoR}"
 								showOn="button" timeZone="UTC" required="true">
 							</p:calendar>
 							<br />
@@ -78,19 +78,16 @@
 								value="NroCelular " styleClass="control-label" />
 							<br />
 							<h:inputText autocomplete="off" id="i-RE-nrocelular"
-								styleClass="form-control" value="" maxlength="45"
+								styleClass="form-control" value="#{roomieController.roomie.nroCelularR}" maxlength="45"
 								required="true" />
-		
-						</h:form>
-					</div>
-					<div class="r-2">
-						<h:form id="registro2-roomie-form" prependId="false">
+							<br />	
+							<br />
 
 							<h:outputLabel for="Correo electronico" id="l-RE-email"
 								value="Email " styleClass="control-label" />
 							<br />
 							<h:inputText autocomplete="off" id="i-RE-email"
-								styleClass="form-control" value="" maxlength="45"
+								styleClass="form-control" value="#{roomieController.roomie.emailR}" maxlength="45"
 								required="true" />
 							<br />
 							<br />
@@ -99,7 +96,7 @@
 							<h:outputLabel for="Genero" id="l-RE-genero" value="Género: "
 								styleClass="control-label" />
 							<br />
-							<h:selectOneMenu id="cbo-RE-genero" value="#{userData.data}">
+							<h:selectOneMenu id="cbo-RE-genero" value="#{roomieController.roomie.generoR}">
 								<f:selectItem itemValue="1" itemLabel="Masculino" />
 								<f:selectItem itemValue="2" itemLabel="Femenino" />
 								<f:selectItem itemValue="2" itemLabel="Helicóptero apache" />
@@ -110,14 +107,14 @@
 								value="Nacionalidad " styleClass="control-label" />
 							<br />
 							<h:inputText autocomplete="off" id="i-RE-nacionalidad"
-								styleClass="form-control" value="" maxlength="45"
+								styleClass="form-control" value="#{roomieController.roomie.nacionalidadR}" maxlength="45"
 								required="true" />
 							<br />
 							<br />
 							<h:outputLabel for="Contraseña" id="l-RE-password"
 								value="Password " styleClass="control-label" />
 							<br />
-							<h:inputSecret autocomplete="off" id="i-RE-password" value=""
+							<h:inputSecret autocomplete="off" id="i-RE-password" value="#{roomieController.roomie.contraseniaR}"
 								maxlength="45" required="true" styleClass="form-control" />
 
 							<br />
@@ -127,13 +124,17 @@
 							<br />
 
 							<h:inputTextarea autocomplete="off" id="i-RE-presentacion"
-								styleClass="form-control" value="" maxlength="500"
+								styleClass="form-control" value="#{roomieController.roomie.presentacionR}" maxlength="500"
 								required="true" />
 								<br />
 							<br />
 					
 							<h:commandButton id="btn-RE-registroR"
-							value="Registrar" onclick="alert('Cliente registrado')"/>
+							value="Registrar" 
+							actionListener="#{roomieController.insertarRoomie()}"
+							onclick="alert('Roomie registrado')"
+							action="home?faces-redirect=true"
+							/>
 								
 
 

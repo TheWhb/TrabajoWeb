@@ -45,6 +45,9 @@ public class Roomie implements Serializable {
 	@Column(name="EmailR", nullable=false, length=40)
 	private String EmailR;
 	
+	@Column(name="ContraseniaR", nullable=false, length=15)
+	private String ContraseniaR;
+	
 	@Column(name="NacionalidadR", nullable=false, length=20)
 	private String NacionalidadR;
 	
@@ -60,8 +63,8 @@ public class Roomie implements Serializable {
 	}
 
 	public Roomie(int idRoomie, String nombreR, String apellidoR, int dNIR, String usernameR, int edadR,
-			Date fNacimientoR, String generoR, int nroCelularR, String emailR, String nacionalidadR,
-			String presentacionR, Vivienda viviendaR) {
+			Date fNacimientoR, String generoR, int nroCelularR, String emailR, String contraseniaR,
+			String nacionalidadR, String presentacionR, Vivienda viviendaR) {
 		super();
 		this.idRoomie = idRoomie;
 		NombreR = nombreR;
@@ -73,6 +76,7 @@ public class Roomie implements Serializable {
 		GeneroR = generoR;
 		NroCelularR = nroCelularR;
 		EmailR = emailR;
+		ContraseniaR = contraseniaR;
 		NacionalidadR = nacionalidadR;
 		PresentacionR = presentacionR;
 		this.viviendaR = viviendaR;
@@ -156,6 +160,14 @@ public class Roomie implements Serializable {
 
 	public void setEmailR(String emailR) {
 		EmailR = emailR;
+	}
+
+	public String getContraseniaR() {
+		return ContraseniaR;
+	}
+
+	public void setContraseniaR(String contraseniaR) {
+		ContraseniaR = contraseniaR;
 	}
 
 	public String getNacionalidadR() {

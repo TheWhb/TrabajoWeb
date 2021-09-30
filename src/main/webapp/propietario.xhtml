@@ -1,0 +1,150 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:body>
+	<ui:composition template="templates/common.xhtml">
+		<ui:define name="header">
+			<div class="h-header">
+				<h1 class="logo_findr">FindRoomie</h1>
+				<div class="navigation">
+					<ul class="enlaces">
+						<li><a href="home.xhtml" class="header-link">Inicio</a></li>
+						<li><a href="#" class="header-link">Sobre Nosotros</a></li>
+						<li><a href="#" class="header-link">Lugares</a></li>
+						<li><a href="#" class="header-link">Contacto</a></li>
+					</ul>
+				</div>
+			</div>
+		</ui:define>
+
+		<ui:define name="content">
+			<div class="c-login-main">
+				<h:graphicImage value="/resources/img/friend2.png" height="100%"
+					width="50%">
+				</h:graphicImage>
+				<div class="d-derecha">
+					<div class="d-login">
+						<a href="roomie.xhtml" class="l-propietarios">ir a registro
+							para roomies</a> <br /> <br />
+						<h1 class="t-login">Registrarse</h1>
+						<br />
+						<p class="t-eresnuevo">Regístrate con tu email</p>
+						<br />
+						<h:form>
+							<p:messages autoUpdate="true" />
+							<h:outputLabel for="Nombre" value="Nombre: "
+								styleClass="control-label" />
+							<h:inputText autocomplete="off" id="nombreP"
+								styleClass="form-control"
+								value="#{propietarioController.propietario.nombreP}"
+								maxlength="20" required="true" />
+							<br />
+							<br />
+							<h:outputLabel for="Apellido" value="Apellido: "
+								styleClass="control-label" />
+							<h:inputText autocomplete="off" id="apellidoP"
+								styleClass="form-control"
+								value="#{propietarioController.propietario.apellidoP}"
+								maxlength="20" required="true" />
+							<br />
+							<br />
+							<h:outputLabel for="DNI" value="DNI: " styleClass="control-label" />
+							<h:inputText autocomplete="off" id="DNIP"
+								styleClass="form-control"
+								value="#{propietarioController.propietario.DNIP}"
+								maxlength="8" required="true" />
+							<br />
+							<br />
+							<h:outputLabel for="Username" value="Username: "
+								styleClass="control-label" />
+							<h:inputText autocomplete="off" id="usernameP"
+								styleClass="form-control"
+								value="#{propietarioController.propietario.usernameP}"
+								maxlength="20" required="true" />
+							<br />
+							<br />
+							<h:outputLabel for="Edad" value="Edad: "
+								styleClass="control-label" />
+							<h:inputText autocomplete="off" id="edadP"
+								styleClass="form-control"
+								value="#{propietarioController.propietario.edadP}"
+								maxlength="3" required="true" />
+							<br />
+							<br />
+							<h:outputLabel for="FNacimiento" value="Fecha de Nacimiento: "
+								styleClass="control-label" />
+							<p:calendar id="FNacimiento" pattern="dd/MM/yyyy"
+								value="#{propietarioController.propietario.FNacimientoP}"
+								showOn="button" timeZone="UTC" required="true">
+							</p:calendar>
+							<br />
+							<br />
+							<h:outputLabel for="Genero" value="Genero: "
+								styleClass="control-label" />
+							<h:inputText autocomplete="off" id="generoP"
+								styleClass="form-control"
+								value="#{propietarioController.propietario.generoP}"
+								maxlength="20" required="true" />
+							<br />
+							<br />
+							<h:outputLabel for="NroCelular" value="NroCelular: "
+								styleClass="control-label" />
+							<h:inputText autocomplete="off" id="nroCelularP"
+								styleClass="form-control"
+								value="#{propietarioController.propietario.nroCelularP}"
+								maxlength="11" required="true" />
+							<br />
+							<br />
+							<h:outputLabel for="Email" value="Email: "
+								styleClass="control-label" />
+							<h:inputText autocomplete="off" id="emailP"
+								styleClass="form-control"
+								value="#{propietarioController.propietario.emailP}"
+								maxlength="40" required="true" />
+							<br />
+							<br />
+							<h:outputLabel for="Nacionalidad" value="Nacionalidad: "
+								styleClass="control-label" />
+							<h:inputText autocomplete="off" id="nacionalidadP"
+								styleClass="form-control"
+								value="#{propietarioController.propietario.nacionalidadP}"
+								maxlength="20" required="true" />
+							<br />
+							<br />
+							<h:outputLabel for="Presentacion" value="Presentacion: "
+								styleClass="control-label" />
+							<h:inputText autocomplete="off" id="presentacionP"
+								styleClass="form-control"
+								value="#{propietarioController.propietario.presentacionP}"
+								maxlength="500" required="true" />
+							<br />
+							<br />
+							<p:commandButton icon="ui-icon-key" value="Registrarse" 
+								actionListener="#{propietarioController.insertarPropietario()}"
+								styleClass="btn btn-primary " update="@form"
+								action="sesionpropietario?faces-redirect=true" />
+						</h:form>
+					</div>
+				</div>
+			</div>
+		</ui:define>
+
+
+
+
+
+		<ui:define name="footer">
+
+		</ui:define>
+	</ui:composition>
+
+</h:body>
+</html>
