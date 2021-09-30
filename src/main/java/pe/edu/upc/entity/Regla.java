@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Regla")
+@Table(name = "Regla")
 public class Regla implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -19,13 +19,13 @@ public class Regla implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idRegla;
-	
+
 	@ManyToOne
-	@JoinColumn(name="idVivienda", nullable=false)
+	@JoinColumn(name = "idVivienda", nullable = false)
 	private Vivienda viviendaR;
-	
+
 	@ManyToOne
-	@JoinColumn(name="idCaracteristica", nullable=false)
+	@JoinColumn(name = "idCaracteristica", nullable = false)
 	private Caracteristica caracteristicaR;
 
 	public Regla() {
@@ -62,5 +62,5 @@ public class Regla implements Serializable {
 	public void setCaracteristicaR(Caracteristica caracteristicaR) {
 		this.caracteristicaR = caracteristicaR;
 	}
-	
+
 }

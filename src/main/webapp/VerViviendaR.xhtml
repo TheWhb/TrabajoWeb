@@ -1,0 +1,132 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition template="templates/common.xhtml">
+		<ui:define name="header">
+			<div class="h-header">
+				<h1 class="logo_findr">FindRoomie</h1>
+				<div class="navigation">
+					<ul class="enlaces">
+						<li><a href="RoomieInicio.xhtml" class="header-link">Inicio</a></li>
+						<li><a href="#" class="header-link">Sobre Nosotros</a></li>
+						<li><a href="#" class="header-link">Lugares</a></li>
+						<li><a href="#" class="header-link">Contacto</a></li>
+						<li><a href="c_editPerfilR.xhtml" class="header-link">Configuración</a></li>
+						<li><a href="pSuscripcionR.xhtml" class="btn-sus1">Premium</a></li>
+
+
+					</ul>
+				</div>
+			</div>
+		</ui:define>
+
+		<ui:define name="content">
+
+			<div class="c-main-config">
+				<h:graphicImage value="/resources/img/bg-config.png" height="100%"
+					width="100%"></h:graphicImage>
+				<div class="c-flex-config">
+					<div class="p-infov-izq">
+				<h3>Información de la vivienda</h3>
+					
+						<div>
+
+							<h:outputLabel for="Dirección" id="l-VV-direccion"
+								value="Direccion " styleClass="control-label" />
+							<br />
+							<h:inputText autocomplete="off" id="i-VV-direccion"
+								styleClass="form-control" readonly="true"
+								placeholder="direccion" value="" maxlength="45" required="true" />
+							<br /> <br />
+							<h:outputLabel for="NroCuartos" id="l-VV-nrocuartos"
+								value="Nro de Cuartos " styleClass="control-label" />
+							<br />
+							<h:inputText autocomplete="off" id="i-VV-nrocuartos" value=""
+								readonly="true" placeholder="Nrocuarto" maxlength="45"
+								required="true" styleClass="form-control" />
+							<br /> <br />
+						</div>
+						<div>
+							<h:outputLabel for="NroBanos" id="l-VV-nrobanos"
+								value="Nro de Baños " styleClass="control-label" />
+							<br />
+							<h:inputText autocomplete="off" id="i-VV-nrobanos" value=""
+								maxlength="45" readonly="true" placeholder="nrobanos"
+								required="true" styleClass="form-control" />
+							<br /> <br />
+							<h:outputLabel for="NroPisos" id="l-VV-nropisos" value="Nro de Pisos "
+								styleClass="control-label" />
+							<br />
+							<h:inputText autocomplete="off" id="i-VV-nropisos" value=""
+								maxlength="45" readonly="true" placeholder="nropisos"
+								required="true" styleClass="form-control" />
+							<br /> <br /> <br />
+
+						</div>
+					</div>
+					<div class="p-infoprop-der">
+
+						<h2 class="t-h2-editarPerfil">Información del propietario</h2>
+						<h:form id="vervivienda-prop-form" prependId="false">
+							<div>
+
+								<h:outputLabel for="Nombres Completos"
+									id="l-EP-NombresCompletos" value="Nombres Completos "
+									styleClass="control-label" />
+								<br />
+								<h:inputText autocomplete="off" id="i-EP-nombrescompletos"
+									styleClass="form-control" readonly="true"
+									placeholder="Nombre del propietario" value="" maxlength="45"
+									required="true" />
+								<br /> <br />
+								<h:outputLabel for="Apellidos Completos"
+									id="l-EP-ApellidosCompletos" value="Apellidos Completos "
+									styleClass="control-label" />
+								<br />
+								<h:inputText autocomplete="off" id="i-EP-apellidoscompletos"
+									value="" readonly="true" placeholder="Apellido del propietario"
+									maxlength="45" required="true" styleClass="form-control" />
+								<br /> <br />
+							</div>
+							<div>
+								<h:outputLabel for="DNI" id="l-EP-numerotelef" value="DNI "
+									styleClass="control-label" />
+								<br />
+								<h:inputText autocomplete="off" id="i-VV-dni" value=""
+									maxlength="45" readonly="true" placeholder="DNI"
+									required="true" styleClass="form-control" />
+								<br /> <br />
+								<h:outputLabel for="Email" id="l-EP-direccion" value="Email "
+									styleClass="control-label" />
+								<br />
+								<h:inputText autocomplete="off" id="i-VV-email" value=""
+									maxlength="45" readonly="true" placeholder="Email"
+									required="true" styleClass="form-control" />
+								<br /> <br />
+								<h:commandButton id="btn-VV-bloquear" value="Bloquear" />
+
+							</div>
+						</h:form>
+
+					</div>
+
+				</div>
+
+			</div>
+		</ui:define>
+
+
+	</ui:composition>
+
+
+
+</h:body>
+</html>
